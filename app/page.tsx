@@ -27,13 +27,13 @@ export default function Home() {
   const experiences = [
     {
       title: "Lead Full Stack Developer",
-      company: "Enterprise Solutions Inc.",
-      period: "2021 - Present",
+      company: "Trigent Software Inc.",
+      period: "2023 - Present",
       description: "Leading a team of developers to build scalable web applications using Java, Spring Boot, and Angular"
     },
     {
       title: "Lead Consultant",
-      company: "Virtual Tech Solutions",
+      company: "Virtusa Inc.",
       period: "2021 - 2023",
       description: "Leading architecture decisions and implementing complex enterprise solutions using Spring Boot, Angular, and React.js"
     },
@@ -68,7 +68,7 @@ export default function Home() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button onClick={handleViewProjectClick} variant="outline" size="lg" className="rounded-full text-lg px-8 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
-              View Projects
+              Experience
             </Button>
           </div>
         </div>
@@ -137,13 +137,13 @@ export default function Home() {
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
             <div className="flex justify-center space-x-8">
-              <a href="https://github.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/Sarvesh19" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github className="h-7 w-7" />
               </a>
-              <a href="https://linkedin.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/sarvesh-yadav-95321489/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="h-7 w-7" />
               </a>
-              <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:sarvesh.y305@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="h-7 w-7" />
               </a>
             </div>

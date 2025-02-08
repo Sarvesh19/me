@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Sarvesh Yadav - Senior Software Architect',
+  title: 'Sarvesh Yadav - Sr. Full Stack Developer',
   description: 'Portfolio of Sarvesh Yadav - Full Stack Developer with 10+ years of experience in Java, Angular, React.js, and Spring Boot',
 };
 
