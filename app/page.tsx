@@ -77,7 +77,7 @@ export default function Home() {
       {/* About Section */}
       <section className="py-24">
         <div className="container px-4 mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">About Me</h2>
+          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">About Me</h2>
           <div className="max-w-3xl mx-auto text-lg space-y-6">
             <p className="text-muted-foreground leading-relaxed">
               With over a decade of experience in software development, I specialize in building 
