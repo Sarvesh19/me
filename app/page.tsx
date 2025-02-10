@@ -62,7 +62,7 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             Full Stack Expert with 10+ years of experience
           </p>
-          <div className="flex justify-center gap-4 px-4 md:px-0">
+          <div className="flex justify-center gap-4 px-4 md:px-0 dark:text-black">
             <Button onClick={handleContactMeClick} size="lg" className="rounded-full text-lg px-8 bg-primary text-white hover:bg-primary-dark transition-colors">
               Contact Me
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -95,13 +95,13 @@ export default function Home() {
       {/* Skills Section */}
       <section className="py-24">
         <div className="container px-4 mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Skills & Expertise</h2>
+          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Skills & Expertise</h2>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
             {skills.map((skill) => (
               <Badge 
                 key={skill} 
                 variant="secondary" 
-                className="text-lg py-2 px-6 rounded-full bg-white hover:bg-primary hover:text-white transition-colors shadow-md"
+                className="text-lg py-2 px-6 rounded-full bg-white hover:bg-primary hover:text-white transition-colors shadow-md dark:text-black"
               >
                 {skill}
               </Badge>
@@ -113,7 +113,7 @@ export default function Home() {
       {/* Experience Section */}
       <section className="py-24">
         <div ref={experienceRef} className="container px-4 mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Professional Experience</h2>
+          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Professional Experience</h2>
           <div className="grid gap-8 max-w-4xl mx-auto">
             {experiences.map((exp, index) => (
               <Card key={index} className="p-8 hover:shadow-lg transition-shadow border-none shadow-md">
@@ -131,7 +131,7 @@ export default function Home() {
       {/* Contact Section */}
       <section ref={contactRef} className="py-24">
         <div className="container px-4 mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Contact Me</h2>
+          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Contact Me</h2>
           <div className="max-w-3xl mx-auto text-lg space-y-6 text-center">
             <p className="text-muted-foreground leading-relaxed">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
