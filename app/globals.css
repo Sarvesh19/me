@@ -46,3 +46,7 @@
   --input: 0 0% 20%;
   --ring: 0 0% 90%;
 }
+
+.dark h1, .dark h2, .dark h3 {
+  color: var(--primary-foreground);
+}
