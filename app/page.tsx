@@ -63,7 +63,7 @@ export default function Home() {
             Full Stack Expert with 10+ years of experience
           </p>
           <div className="flex justify-center gap-4 px-4 md:px-0 dark:text-black">
-            <Button onClick={handleContactMeClick} size="lg" className="rounded-full text-lg px-8 bg-primary text-white hover:bg-primary-dark transition-colors">
+            <Button onClick={handleContactMeClick} size="lg" className="rounded-full text-lg px-8 bg-primary text-white hover:bg-primary-dark transition-colors dark:text-black">
               Contact Me
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
