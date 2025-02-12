@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import SarveshExpert from "./SarveshExpert";
 
 export default function Home() {
   const skills = [
@@ -15,14 +17,6 @@ export default function Home() {
 
   const experienceRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-
-  const handleViewProjectClick = () => {
-    experienceRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleContactMeClick = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const experiences = [
     {
@@ -52,30 +46,37 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center">
-        <div className="container px-4 mx-auto text-center relative">
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
-            Sarvesh Yadav
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Full Stack Expert with 10+ years of experience
-          </p>
-          <div className="flex justify-center gap-4 px-4 md:px-0 dark:text-black">
-            <Button onClick={handleContactMeClick} size="lg" className="rounded-full text-lg px-8 bg-primary text-white hover:bg-primary-dark transition-colors dark:text-black">
-              Contact Me
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button onClick={handleViewProjectClick} variant="outline" size="lg" className="rounded-full text-lg px-8 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
-              Experience
-            </Button>
-          </div>
-        </div>
-      </section>
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.5 }}
+        className="relative min-h-[90vh] flex items-center justify-center"
+      >
+        <div className="w-full max-w-none px-0 text-center relative">
+        <SarveshExpert experienceRef={experienceRef} contactRef={contactRef} />
+  {/* <div className="container px-4 mx-auto">
+    <div className="flex justify-center gap-4 px-4 md:px-0 dark:text-black">
+      <Button onClick={handleContactMeClick} size="lg" className="rounded-full text-lg px-8 bg-primary text-white hover:bg-primary-dark transition-colors dark:text-black">
+        Contact Me
+        <ArrowRight className="ml-2 h-5 w-5" />
+      </Button>
+      <Button onClick={handleViewProjectClick} variant="outline" size="lg" className="rounded-full text-lg px-8 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+        Experience
+      </Button>
+    </div>
+  </div> */}
+</div>
+      </motion.section>
 
       {/* About Section */}
-      <section className="py-24">
+      <motion.section 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="py-24"
+      >
         <div className="container px-4 mx-auto">
           <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">About Me</h2>
           <div className="max-w-3xl mx-auto text-lg space-y-6">
@@ -90,10 +91,15 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section className="py-24">
+      <motion.section 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ delay: 0.4, duration: 0.5 }}
+        className="py-24"
+      >
         <div className="container px-4 mx-auto">
           <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Skills & Expertise</h2>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
@@ -108,10 +114,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience Section */}
-      <section className="py-24">
+      <motion.section 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ delay: 0.6, duration: 0.5 }}
+        className="py-24"
+      >
         <div ref={experienceRef} className="container px-4 mx-auto">
           <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Professional Experience</h2>
           <div className="grid gap-8 max-w-4xl mx-auto">
@@ -126,11 +137,16 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section ref={contactRef} className="py-24">
-        <div className="container px-4 mx-auto">
+      <motion.section 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ delay: 0.8, duration: 0.5 }}
+        className="py-24"
+      >
+        <div ref={contactRef} className="container px-4 mx-auto">
           <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Contact Me</h2>
           <div className="max-w-3xl mx-auto text-lg space-y-6 text-center">
             <p className="text-muted-foreground leading-relaxed">
@@ -149,9 +165,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-     
+      {/* Footer */}
+      <motion.footer 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ delay: 1, duration: 0.5 }}
+        className="py-12"
+      >
+        {/* ... existing footer content ... */}
+      </motion.footer>
     </main>
   );
 }
