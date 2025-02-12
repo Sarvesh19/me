@@ -23,9 +23,9 @@ export default function SarveshExpert({ experienceRef, contactRef }: SarveshExpe
 
   return (
     <section
-      id="about"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-primary/10 to-background dark:from-primary/20 dark:to-background"
-    >
+  id="about"
+  className="min-h-screen flex items-center justify-center"
+>
       <div className="container mx-auto px-6 text-center">
         <motion.h1
           className="text-5xl md:text-7xl font-bold mb-4 text-foreground"
