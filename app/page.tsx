@@ -17,6 +17,7 @@ export default function Home() {
 
   const experienceRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
 
   const experiences = [
     {
@@ -45,29 +46,31 @@ export default function Home() {
     }
   ];
 
+  const personalProjects = [
+    {
+      title: "Tripifyo",
+      description: "A travel platform designed to simplify planning and inspire adventure.",
+      link: "https://tripifyo.com",
+    },
+    {
+      title: "Electric Nodes",
+      description: "A cutting-edge web app connecting ideas and innovation.",
+      link: "https://electricnodes.web.app/",
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 text-foreground">
       {/* Hero Section */}
       <motion.section 
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.5 }}
-        className="relative min-h-[90vh] flex items-center justify-center"
+        className="relative min-h-[90vh] flex items-center justify-center  text-white"
       >
         <div className="w-full max-w-none px-0 text-center relative">
-        <SarveshExpert experienceRef={experienceRef} contactRef={contactRef} />
-  {/* <div className="container px-4 mx-auto">
-    <div className="flex justify-center gap-4 px-4 md:px-0 dark:text-black">
-      <Button onClick={handleContactMeClick} size="lg" className="rounded-full text-lg px-8 bg-primary text-white hover:bg-primary-dark transition-colors dark:text-black">
-        Contact Me
-        <ArrowRight className="ml-2 h-5 w-5" />
-      </Button>
-      <Button onClick={handleViewProjectClick} variant="outline" size="lg" className="rounded-full text-lg px-8 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
-        Experience
-      </Button>
-    </div>
-  </div> */}
-</div>
+          <SarveshExpert experienceRef={experienceRef} contactRef={contactRef} />
+        </div>
       </motion.section>
 
       {/* About Section */}
@@ -78,13 +81,13 @@ export default function Home() {
         className="py-24"
       >
         <div className="container px-4 mx-auto">
-          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-pink-500 text-transparent bg-clip-text mb-12 text-center">About Me</h2>
           <div className="max-w-3xl mx-auto text-lg space-y-6">
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               With over a decade of experience in software development, I specialize in building 
               enterprise-grade applications using Java, Spring Boot, Angular, React.js, and Next.js. 
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               My expertise lies in creating scalable, maintainable, and efficient solutions that 
               drive business value. I'm passionate about clean code, microservices architecture, 
               and delivering exceptional user experiences.
@@ -98,19 +101,45 @@ export default function Home() {
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ delay: 0.4, duration: 0.5 }}
-        className="py-24"
+        className="py-24 bg-white dark:bg-gray-900"
       >
         <div className="container px-4 mx-auto">
-          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Skills & Expertise</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-pink-500 text-transparent bg-clip-text mb-12 text-center">Skills & Expertise</h2>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
             {skills.map((skill) => (
               <Badge 
                 key={skill} 
                 variant="secondary" 
-                className="text-lg py-2 px-6 rounded-full bg-white hover:bg-primary hover:text-white transition-colors shadow-md dark:text-black"
+                className="text-lg py-2 px-6 rounded-full bg-white dark:bg-gray-800 hover:bg-red-500 hover:text-white transition-colors shadow-md dark:text-gray-200"
               >
                 {skill}
               </Badge>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Personal Projects Section */}
+      <motion.section 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="py-24"
+      >
+        <div ref={projectsRef} className="container px-4 mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-pink-500 text-transparent bg-clip-text mb-12 text-center">Personal Projects</h2>
+          <div className="grid gap-8 max-w-4xl mx-auto md:grid-cols-2">
+            {personalProjects.map((project, index) => (
+              <Card key={index} className="p-6 hover:shadow-xl transition-shadow border-none shadow-lg bg-white dark:bg-gray-800">
+                <h3 className="text-2xl font-semibold mb-3 text-red-500 dark:text-pink-400">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                <Button asChild variant="outline" className="w-full group hover:bg-red-500 hover:text-white border-red-500">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    Visit Project
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </Card>
             ))}
           </div>
         </div>
@@ -121,18 +150,18 @@ export default function Home() {
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ delay: 0.6, duration: 0.5 }}
-        className="py-24"
+        className="py-24 bg-white dark:bg-gray-900"
       >
         <div ref={experienceRef} className="container px-4 mx-auto">
-          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Professional Experience</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-pink-500 text-transparent bg-clip-text mb-12 text-center">Professional Experience</h2>
           <div className="grid gap-8 max-w-4xl mx-auto">
             {experiences.map((exp, index) => (
-              <Card key={index} className="p-8 hover:shadow-lg transition-shadow border-none shadow-md">
-                <h3 className="text-2xl font-semibold mb-3">{exp.title}</h3>
-                <p className="text-primary font-medium mb-4">
+              <Card key={index} className="p-8 hover:shadow-lg transition-shadow border-none shadow-md bg-white dark:bg-gray-800">
+                <h3 className="text-2xl font-semibold mb-3 text-red-500 dark:text-pink-400">{exp.title}</h3>
+                <p className="text-red-500 dark:text-pink-400 font-medium mb-4">
                   {exp.company} | {exp.period}
                 </p>
-                <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{exp.description}</p>
               </Card>
             ))}
           </div>
@@ -147,19 +176,19 @@ export default function Home() {
         className="py-24"
       >
         <div ref={contactRef} className="container px-4 mx-auto">
-          <h2 className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text mb-12 text-center">Contact Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-pink-500 text-transparent bg-clip-text mb-12 text-center">Contact Me</h2>
           <div className="max-w-3xl mx-auto text-lg space-y-6 text-center">
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
             <div className="flex justify-center space-x-8">
-              <a href="https://github.com/Sarvesh19" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/Sarvesh19" className="text-gray-600 hover:text-red-500 dark:hover:text-pink-400 transition-codes">
                 <Github className="h-7 w-7" />
               </a>
-              <a href="https://www.linkedin.com/in/sarvesh-yadav-95321489/" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/sarvesh-yadav-95321489/" className="text-gray-600 hover:text-red-500 dark:hover:text-pink-400 transition-colors">
                 <Linkedin className="h-7 w-7" />
               </a>
-              <a href="mailto:sarvesh.y305@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:sarvesh.y305@gmail.com" className="text-gray-600 hover:text-red-500 dark:hover:text-pink-400 transition-colors">
                 <Mail className="h-7 w-7" />
               </a>
             </div>
@@ -172,9 +201,11 @@ export default function Home() {
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ delay: 1, duration: 0.5 }}
-        className="py-12"
+        className="py-12 bg-gradient-to-r from-red-500 to-pink-500 text-white"
       >
-        {/* ... existing footer content ... */}
+        <div className="container px-4 mx-auto text-center">
+          <p>© 2025 Sarvesh Yadav | Built with Passion</p>
+        </div>
       </motion.footer>
     </main>
   );
