@@ -1,16 +1,17 @@
 "use client";
 
-import { Github, Linkedin, Mail, Terminal, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import SarveshExpert from "./SarveshExpert";
+import MarsAnimation from "./MarsAnimation"; // Updated import
 
 export default function Home() {
   const skills = [
-    "Java", "Spring Boot", "Angular", "React.js", "Next.js", 
+    "Java", "Spring Boot", "Angular", "React.js", "Next.js",
     "Microservices", "REST APIs", "TypeScript", "Node.js",
     "Docker", "Kubernetes", "AWS", "CI/CD", "Git"
   ];
@@ -54,8 +55,13 @@ export default function Home() {
     },
     {
       title: "Electric Nodes",
-      description: "A cutting-edge web app connecting ideas and innovation.",
+      description: "A Charger sharing WebApp for EV vehicles.",
       link: "https://electricnodes.web.app/",
+    },
+    {
+      title: "TempChat",
+      description: "Create secure, temporary chat rooms that vanish after your chosen time.",
+      link: "https://tempchat-plum.vercel.app/",
     },
   ];
 
@@ -66,9 +72,12 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.5 }}
-        className="relative min-h-[90vh] flex items-center justify-center  text-white"
+        className="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden"
       >
-        <div className="w-full max-w-none px-0 text-center relative">
+        {/* Professional Mars Animation Background */}
+        <MarsAnimation />
+        
+        <div className="w-full max-w-none px-0 text-center relative z-10">
           <SarveshExpert experienceRef={experienceRef} contactRef={contactRef} />
         </div>
       </motion.section>
@@ -182,7 +191,7 @@ export default function Home() {
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
             <div className="flex justify-center space-x-8">
-              <a href="https://github.com/Sarvesh19" className="text-gray-600 hover:text-red-500 dark:hover:text-pink-400 transition-codes">
+              <a href="https://github.com/Sarvesh19" className="text-gray-600 hover:text-red-500 dark:hover:text-pink-400 transition-colors">
                 <Github className="h-7 w-7" />
               </a>
               <a href="https://www.linkedin.com/in/sarvesh-yadav-95321489/" className="text-gray-600 hover:text-red-500 dark:hover:text-pink-400 transition-colors">
