@@ -49,20 +49,21 @@ export default function Home() {
 
   const personalProjects = [
     {
-      title: "Tripifyo",
+      title: "Tripifyo.com",
       description: "A travel platform designed to simplify planning and inspire adventure.",
       link: "https://tripifyo.com",
-    },
-    {
-      title: "Electric Nodes",
-      description: "A Charger sharing WebApp for EV vehicles.",
-      link: "https://electricnodes.web.app/",
     },
     {
       title: "TempChat",
       description: "Create secure, temporary chat rooms that vanish after your chosen time.",
       link: "https://tempchat-plum.vercel.app/",
     },
+    {
+      title: "Electric Nodes",
+      description: "A Charger sharing WebApp for EV vehicles.",
+      link: "https://electricnodes.web.app/",
+    },
+    
   ];
 
   return (
@@ -75,7 +76,7 @@ export default function Home() {
         className="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden"
       >
         {/* Professional Mars Animation Background */}
-        <MarsAnimation />
+        {/* <MarsAnimation /> */}
         
         <div className="w-full max-w-none px-0 text-center relative z-10">
           <SarveshExpert experienceRef={experienceRef} contactRef={contactRef} />
