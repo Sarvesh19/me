@@ -8,6 +8,8 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import SarveshExpert from "./SarveshExpert";
 import MarsAnimation from "./MarsAnimation"; // Updated import
+import SplashCursor from '../components/cursor'
+import Hyperspeed from '../components/hyperspeed-component';
 
 export default function Home() {
   const skills = [
@@ -69,6 +71,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 text-foreground">
       {/* Hero Section */}
+      <SplashCursor />
+
+    
+
       <motion.section 
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
