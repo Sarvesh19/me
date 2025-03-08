@@ -65,7 +65,7 @@ export default function SarveshExpert({ experienceRef, contactRef }: SarveshExpe
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          With 10+ years of experience in building robust and scalable applications
+          Full Stack Expert with 10+ years of experience
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
