@@ -56,6 +56,11 @@ export default function Home() {
       link: "https://tripifyo.com",
     },
     {
+      title: "Fitosha",
+      description: "A health and fitness app that helps you track your workouts and meals. (Built With React native)",
+      link: "https://expo.dev/artifacts/eas/pgue9JtdJEWZ2X23QatNJ8.aab",
+    },
+    {
       title: "TempChat",
       description: "Create secure, temporary chat rooms that vanish after your chosen time.",
       link: "https://tempchat-plum.vercel.app/",
